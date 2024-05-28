@@ -27,7 +27,20 @@ public class Main {
                 pw.println(msg);
                 System.out.println("Message returned from the server = " + br.readLine());
 
+                pw.close();
+                br.close();
+                client.close();
+
+                if (msg.equalsIgnoreCase("bye")){
+                    break;
+                }
             }
+
+                catch (IOException ie){
+                    System.out.println("I/O ERROR" + ie);
+                }
+
+
         }
 
 
